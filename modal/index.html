@@ -26,7 +26,7 @@
     		opacity: 1;
     		width: 40%;
     		height: 10em;
-    		top: 10em;
+    		transform: translateY(10em);
     		background-color: green; 
     		left: 50%;
     		margin-left: -20%;
@@ -44,23 +44,22 @@
 
     	@keyframes slideIn {
     		from {
-    			top: -10em;
+    			transform: translateY(-10em);
     			opacity: 0
     		}
-
     		to {
-    			top: 10em;
+    			transform: translateY(10em);
     			opacity: 1
     		}
     	}
 
     	@-webkit-keyframes slideIn{
     		from {
-    			top: -10em;
+    			transform: translateY(-10em);
     			opacity: 0
     		}
     		to {
-    			top: 10em;
+    			transform: translateY(10em);
     			opacity: 1
     		}
     	}
@@ -104,9 +103,12 @@
     			modal.style.display='none';
     		}
 
-    		modal.onclick = function() {
-    			modal.style.display='none';
-    		}
+    		window.onclick = function(event) {
+    			if (event.target == modal) {
+        			modal.style.display = "none";
+    			}
+			}
+
     	}
 
     </script> 
