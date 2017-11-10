@@ -1,0 +1,57 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 20px 20px;
+}
+
+header {
+    padding: 2em 2em;
+    text-align: center;    
+}
+
+nav {
+    width: 30%;
+    float: left;
+}
+
+/*  to prevent auto expanding of column when setting padding, margin, border,
+    (1) wrap content of column by div, and set that div property(default width div will expand inside)
+    (2) set column box-sizing: border-box
+    (3) set column > * 
+*/
+
+nav > div {
+    padding: 2em 2em;
+}
+
+nav ul {
+    list-style-type: none;
+  }
+
+section {
+    width: 40%;
+    float: left;
+}
+
+section > div {
+    padding: 2em 2em;
+}
+
+aside {
+    width: 30%;
+    float: left;
+}
+
+aside > div {
+    padding: 2em 2em;
+}
+
+
+footer {
+    clear: both;
+    text-align: center;
+}

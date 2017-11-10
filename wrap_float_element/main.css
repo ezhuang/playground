@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.outer {
+    margin-top: 20px;
+}
+
+.inner {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.overflow-wrap {
+    overflow: hidden;
+}
+
+.float-wrap {
+    float: left;
+}
+
+p:nth-child(5) {
+    margin-top: 300px;
+}
+
+p:nth-child(3) {
+    margin-top: 20px;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+

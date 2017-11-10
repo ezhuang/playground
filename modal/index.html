@@ -1,0 +1,123 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;
+    charset=UTF-8" />
+    <link type="text/css" href="main.css" rel="stylesheet"></link>
+    <style type="text/css">
+    	#modal {
+    		display: none; 
+    		position: fixed;
+    		z-index: 1;
+    		height: 100%;
+    		width: 100%;
+    		left: 0;
+    		top: 0;
+    		opacity: 1; /* opacity in parent element will have same effect on child elemnts */
+    		background-color: rgba(0, 0, 0, 0.4); /* to avoid effects on child element, set opacity in background color*/
+    		animation-name: fadeIn;
+    		animation-duration: 0.4s;
+    		-webkit-animation-name: fadeIn;
+    		-webkit-animation-duration: 0.4s;
+    		overflow: hidden;
+    	}
+    	#modal-content {
+    		position: fixed;
+    		opacity: 1;
+    		width: 40%;
+    		height: 10em;
+    		top: 10em;
+    		background-color: green; 
+    		left: 50%;
+    		margin-left: -20%;
+    		animation-name: slideIn;
+    		animation-duration: 0.4s;
+    		-webkit-animation-name: slideIn;
+    		-webkit-animation-duration: 0.4s;
+    	}
+
+    	#close-button {
+    		position: absolute;
+    		top: 0;
+    		right: 0;
+    	}
+
+    	@keyframes slideIn {
+    		from {
+    			top: -10em;
+    			opacity: 0
+    		}
+
+    		to {
+    			top: 10em;
+    			opacity: 1
+    		}
+    	}
+
+    	@-webkit-keyframes slideIn{
+    		from {
+    			top: -10em;
+    			opacity: 0
+    		}
+    		to {
+    			top: 10em;
+    			opacity: 1
+    		}
+    	}
+
+    	@keyframes fadeIn{
+    		from {
+    			opacity: 0;
+    		}
+    		to {
+    			opacity: 1
+    		}
+    	}
+
+    	@-webkit-keyframes fadeIn{
+    		from {
+    			opacity: 0;
+    		}
+    		to {
+    			opacity: 1
+    		}
+    	}
+
+
+    	
+
+    </style>
+    <script type="text/javascript">
+    	window.onload = function() {
+    		var modal = document.getElementById('modal');
+    		var modalContent = document.getElementById('modal-content');
+    		var openModalBtn = document.getElementById('open-button');
+    		var closeModalBtn = document.getElementById('close-button');
+
+    		//handle open modal event
+    		openModalBtn.onclick = function () {
+    			modal.style.display='block';
+    		}
+
+    		//handle close modal event
+    		closeModalBtn.onclick = function () {
+    			modal.style.display='none';
+    		}
+
+    		modal.onclick = function() {
+    			modal.style.display='none';
+    		}
+    	}
+
+    </script> 
+</html>
+</head>
+<body>
+	<button id="open-button"> click here to open modal</button>
+	<div id="modal">
+		<div id="modal-content">
+			<button id="close-button">X</button>
+		</div>
+	</div>
+</body>
+
